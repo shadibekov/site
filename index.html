@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota Camry 55</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #101010;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #181818;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #e63946;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        .hero {
+            min-height: 550px;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.45),
+                    rgba(0,0,0,0.85)
+                ),
+                url("https://i.pinimg.com/736x/9a/67/43/9a6743bf9caff9ebe5a7ece3e1d8616b.jpg");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #e63946;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e63946;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #b91c2b;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #aaa;
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .about {
+            background: #191919;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 850px;
+            margin: auto;
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .specs {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(210px, 1fr));
+            gap: 25px;
+        }
+
+        .spec-card {
+            background: #202020;
+            padding: 35px 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-8px);
+            border-color: #e63946;
+        }
+
+        .spec-card h3 {
+            color: #e63946;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .spec-card p {
+            color: #bbb;
+        }
+
+        .gallery {
+            background: #191919;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .advantages {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .advantage {
+            background: #202020;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .advantage h3 {
+            color: #e63946;
+            margin-bottom: 15px;
+        }
+
+        .advantage p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .contact {
+            background: #191919;
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 20px 0;
+            color: #ccc;
+        }
+
+        footer {
+            background: #080808;
+            padding: 25px;
+            text-align: center;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="logo">CAMRY 55</div>
+
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#about">О машине</a>
+            <a href="#specs">Характеристики</a>
+            <a href="#gallery">Галерея</a>
+        </nav>
+    </header>
+
+    <!-- Главная -->
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <h1>TOYOTA <span>CAMRY 55</span></h1>
+
+            <p>
+                Легендарный бизнес-седан.
+                Элегантность, комфорт и надёжность
+                в каждом километре.
+            </p>
+
+            <a href="#about" class="btn">
+                Узнать больше
+            </a>
+        </div>
+    </div>
+
+    <!-- О машине -->
+    <section class="about" id="about">
+        <h2 class="section-title">О Toyota Camry 55</h2>
+
+        <p>
+            Toyota Camry XV55 — рестайлинговая версия
+            седьмого поколения популярного седана.
+
+            Автомобиль получил обновлённый дизайн
+            передней и задней части кузова,
+            комфортабельный салон и современные
+            для своего времени технологии.
+
+            Camry 55 известна своим комфортом,
+            надёжностью и плавностью хода.
+        </p>
+    </section>
+
+    <!-- Характеристики -->
+    <section id="specs">
+        <h2 class="section-title">Характеристики</h2>
+
+        <p class="subtitle">
+            Данные одной из популярных версий — 2.5
+        </p>
+
+        <div class="specs">
+
+            <div class="spec-card">
+                <h3>2.5 л</h3>
+                <p>Бензиновый двигатель</p>
+            </div>
+
+            <div class="spec-card">
+                <h3>181 л.с.</h3>
+                <p>Мощность двигателя</p>
+            </div>
+
+            <div class="spec-card">
+                <h3>6 АКПП</h3>
+                <p>Автоматическая коробка</p>
+            </div>
+
+            <div class="spec-card">
+                <h3>FWD</h3>
+                <p>Передний привод</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Галерея -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Галерея</h2>
+
+        <p class="subtitle">
+            Стиль и элегантность Toyota Camry
+        </p>
+
+        <div class="gallery-container">
+
+            <img
+                src="https://i.pinimg.com/736x/b0/fd/30/b0fd30cb3328200bc8b0e06d4ec66c64.jpg"
+                alt="Toyota">
+            
+            <img
+                src="https://i.pinimg.com/1200x/da/7d/d7/da7dd74e764f9f6878832fe78b9609b8.jpg"
+                alt="Автомобиль">
+
+            <img
+                src="https://i.pinimg.com/736x/55/0e/e2/550ee2714ee16cd32f3e960c6478dff5.jpg"
+                alt="Автомобиль">
+
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section>
+        <h2 class="section-title">Почему Camry 55?</h2>
+
+        <div class="advantages">
+
+            <div class="advantage">
+                <h3>01. Надёжность</h3>
+                <p>
+                    Toyota Camry известна
+                    долговечностью и практичностью.
+                </p>
+            </div>
+
+            <div class="advantage">
+                <h3>02. Комфорт</h3>
+                <p>
+                    Просторный салон и комфортная
+                    подвеска для поездок.
+                </p>
+            </div>
+
+            <div class="advantage">
+                <h3>03. Дизайн</h3>
+                <p>
+                    Узнаваемый внешний вид
+                    с выразительной передней частью.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact">
+        <h2 class="section-title">Toyota Camry 55</h2>
+
+        <p>
+            Автомобиль, сочетающий стиль и комфорт.
+        </p>
+
+        <a href="#home" class="btn">
+            Вернуться наверх
+        </a>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <p>© 2026 Camry 55 | Учебный проект</p>
+    </footer>
+
+</body>
+</html>
